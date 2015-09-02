@@ -50,7 +50,7 @@ set tabstop=8     " actual tabs occupy 8 characters
 " make sure Python tabs work
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
-automatically rebalance windows on vim resize
+" automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
 
 set wildmenu
