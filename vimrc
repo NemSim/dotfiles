@@ -17,7 +17,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'scrooloose/nerdtree'
 
-all vundle#end()
+call vundle#end()
 filetype plugin indent on
 
 inoremap jj <ESC>
