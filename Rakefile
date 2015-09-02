@@ -7,19 +7,19 @@ task :install do
 
   if File.exist? File.expand_path('~/.vimrc')
     step 'killing your .vimrc'
-    system('rm -fr .vimrc')
+    system('rm -fr ~/.vimrc')
   end
 
   if File.exist? File.expand_path('~/.tmux.conf')
     step 'killing your .tmux.conf'
-    system('rm -fr .tmux.conf')
+    system('rm -fr ~/.tmux.conf')
   end
 
   step 'linking .vimrc'
-  system('ln -s ./dotfiles/vimrc ./.vimrc')
+  system('ln -s ./dotfiles/vimrc ~/.vimrc')
 
   step 'linking .tmux.conf'
-  system('ln -s ./dotfiles/tmuxconf ./.tmux.conf')
+  system('ln -s ./dotfiles/tmuxconf ~/.tmux.conf')
 
   step 'installing vundle'
   system('vim +PluginInstall +qall')
