@@ -15,7 +15,7 @@ call vundle#begin()
 
 " BWAAAAAAAAMMMMP
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 call vundle#end()
 filetype plugin indent on
@@ -64,13 +64,13 @@ noremap <C-l> <C-w>l
 
 let mapleader = ','
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
 
 
 " WOULD LIKE TO GET WORKING
 "nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
 "nnoremap <leader>t :CtrlP<CR>
 "nnoremap <leader>b :CtrlPBuffer<CR>
-"nnoremap <leader>d :NERDTreeToggle<CR>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 " nnoremap <leader>a :Ag<space>
