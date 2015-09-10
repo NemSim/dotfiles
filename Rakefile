@@ -10,13 +10,13 @@ task :install, :home_dir do |t, args|
   end
 
   if File.exist? File.expand_path("#{home_dir}.vimrc")
-    puts 'killing your .vimrc'
-    system("rm -fr #{home_dir}.vimrc")
+    puts 'killing existing .vimrc'
+    system("mv #{home_dir}.vimrc #{home_dir}.vimrc.backup")
   end
 
   if File.exist? File.expand_path("#{home_dir}.tmux.conf")
-    puts 'killing your .tmux.conf'
-    system("rm -fr #{home_dir}.tmux.conf")
+    puts 'killing existing .tmux.conf'
+    system("mv #{home_dir}.tmux.conf #{home_dir}.tmux.conf.backup")
   end
 
   puts 'linking .vimrc'
