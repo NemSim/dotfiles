@@ -1,8 +1,6 @@
 """ SETUP """
-" $ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" $ ln -s ./dotfiles/vimrc ./.vimrc
-" $ ln -s ./dotfiles/tmuxconf ./.tmux.conf
-" $ vim +PluginInstall +qall
+"" $ vim +PluginInstall +qall
+
 """ FUNCTIONAL """
 
 syntax enable
@@ -16,6 +14,14 @@ call vundle#begin()
 " BWAAAAAAAAMMMMP
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'scrooloose/nerdcommenter'
+
+" figure these out?
+"Plugin 'scrooloose/syntastic'
+"Plugin 'vim-ruby/vim-ruby'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -32,6 +38,16 @@ endif
 
 set autoindent
 
+" syntastic recommended defaults, change up
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+" above this?
+
 " \/ research this? seems sketchy
 "set backupcopy=yes              " see :help crontab
 set directory-=.               " don't store swapfiles in the current directory
@@ -45,9 +61,10 @@ set number                     " show line numbers
 set ruler                      " show where you are
 
 set softtabstop=2 " insert mode tab and backspace use 2 spaces
-set tabstop=8     " actual tabs occupy 8 characters
+set tabstop=2     " actual tabs occupy 2 characters
 
 " make sure Python tabs work
+" but it doesn't work
 autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
 
 " automatically rebalance windows on vim resize
@@ -65,22 +82,18 @@ noremap <C-l> <C-w>l
 let mapleader = ','
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
-
-
-" WOULD LIKE TO GET WORKING
-"nnoremap <leader><space> :call whitespace#strip_trailing()<CR>
-"nnoremap <leader>t :CtrlP<CR>
-"nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-" nnoremap <leader>a :Ag<space>
-" if executable('ag')
-"   " Use Ag over Grep
-"   set grepprg=ag\ --nogroup\ --nocolor
-"
-"   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-"   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-"endif
+nnoremap <leader>a :Ag<space>
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 
 """ SUPERFICIAL """
