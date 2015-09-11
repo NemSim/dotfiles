@@ -62,6 +62,7 @@ set ruler                      " show where you are
 
 set softtabstop=2 " insert mode tab and backspace use 2 spaces
 set tabstop=2     " actual tabs occupy 2 characters
+set shiftwidth=2
 
 " make sure Python tabs work
 " but it doesn't work
