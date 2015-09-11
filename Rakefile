@@ -4,6 +4,11 @@ task :install, :home_dir do |t, args|
   home_dir = args[:home_dir]
   puts "Installing dotfiles into #{home_dir} ..."
 
+  if File.exist? File.expand_path("#{home_dir}.tmux.conf")
+    puts 'killing existing .bashrc'
+    system("mv #{home_dir}.bashrc #{home_dir}.bashrc.backup")
+  end
+
   unless File.exist? File.expand_path("#{home_dir}.vim/bundle")
     puts 'cloning vundle'
     system("git clone https://github.com/VundleVim/Vundle.vim.git #{home_dir}.vim/bundle/Vundle.vim")
@@ -19,6 +24,9 @@ task :install, :home_dir do |t, args|
     system("mv #{home_dir}.tmux.conf #{home_dir}.tmux.conf.backup")
   end
 
+  puts 'linking .bashrc'
+  system("ln -s #{home_dir}dotfiles/bashrc #{home_dir}.bashrc")
+
   puts 'linking .vimrc'
   system("ln -s #{home_dir}dotfiles/vimrc #{home_dir}.vimrc")
 
@@ -27,6 +35,10 @@ task :install, :home_dir do |t, args|
 
   puts 'installing vundle'
   system("vim +PluginInstall +qall")
+
+  puts 'installing ruby 2.2.x'
+  system('rbenv install 2.2.2')
+  system('rbenv global 2.2.2')
 
   puts "(>'.')> DONE! <('.'<)"
 end
