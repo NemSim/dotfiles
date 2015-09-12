@@ -5,14 +5,16 @@ task :install, :home_dir do |t, args|
   home_dir << '/' if home_dir[-1] != '/'
   puts "Installing dotfiles into #{home_dir} ..."
 
-  if File.exist? File.expand_path("#{home_dir}.tmux.conf")
+  if File.exist? File.expand_path("#{home_dir}.bashrc")
     puts 'killing existing .bashrc'
     system("mv #{home_dir}.bashrc #{home_dir}.bashrc.backup")
   end
 
   unless File.exist? File.expand_path("#{home_dir}.vim/bundle")
     puts 'cloning vundle'
+    system("mkdir -p #{home_dir}.vim/bundle")
     system("git clone https://github.com/VundleVim/Vundle.vim.git #{home_dir}.vim/bundle/Vundle.vim")
+    system("chown -R vagrant:vagrant #{home_dir}/.vim")
   end
 
   if File.exist? File.expand_path("#{home_dir}.vimrc")
