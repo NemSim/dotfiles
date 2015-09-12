@@ -24,14 +24,14 @@ task :install, :home_dir do |t, args|
     system("mv #{home_dir}.tmux.conf #{home_dir}.tmux.conf.backup")
   end
 
-  puts 'linking .bashrc'
-  system("ln -s #{home_dir}dotfiles/bashrc #{home_dir}.bashrc")
+  puts "linking #{home_dir}dotfiles/bashrc to #{home_dir}.bashrc"
+  system "ln -s #{home_dir}dotfiles/bashrc #{home_dir}.bashrc"
 
-  puts 'linking .vimrc'
-  system("ln -s #{home_dir}dotfiles/vimrc #{home_dir}.vimrc")
+  puts "linking #{home_dir}dotfiles/vimrc to #{home_dir}.vimrc"
+  system "ln -s #{home_dir}dotfiles/vimrc #{home_dir}.vimrc"
 
-  puts 'linking .tmux.conf'
-  system("ln -s #{home_dir}dotfiles/tmuxconf #{home_dir}.tmux.conf")
+  puts "linking #{home_dir}dotfiles/tmuxconf to #{home_dir}.tmux.conf"
+  system "ln -s #{home_dir}dotfiles/tmuxconf #{home_dir}.tmux.conf"
 
   puts 'installing vundle'
   system("vim +PluginInstall +qall")
