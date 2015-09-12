@@ -2,6 +2,7 @@ desc 'Install these config files.'
 task :install, :home_dir do |t, args|
   args.with_defaults(home_dir: '~/')
   home_dir = args[:home_dir]
+  home_dir << '/' if home_dir[-1] != '/'
   puts "Installing dotfiles into #{home_dir} ..."
 
   if File.exist? File.expand_path("#{home_dir}.tmux.conf")
