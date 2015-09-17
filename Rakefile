@@ -1,5 +1,17 @@
-desc 'Install these config files.'
+desc 'Install everything.'
 task :install, :home_dir do |t, args|
+  args.with_defaults(home_dir: '~/')
+  home_dir = args[:home_dir]
+  puts "Installing into #{home_dir}"
+end
+
+desc 'link dotfiles'
+task :dotfiles do
+  puts 'linking dotfiles'
+end
+
+desc 'Install these config files.'
+task :zzz_install, :home_dir do |t, args|
   args.with_defaults(home_dir: '~/')
   home_dir = args[:home_dir]
   home_dir << '/' if home_dir[-1] != '/'
