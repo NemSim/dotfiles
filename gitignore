@@ -1,0 +1,12 @@
+# Stupid OS X hidden thing
+.DS_Store
+
+# Editor config
+.editorconfig
+
+# Sublime project stuff
+*.sublime-project
+*.sublime-workspace
+
+# Scratch file
+*scratch.nem

@@ -10,6 +10,19 @@ task :dotfiles do
   puts 'linking dotfiles'
 end
 
+desc 'install rvm and ruby'
+task :install_ruby do
+  puts 'installing rvm'
+
+
+  #puts 'installing ruby 2.2.x'
+  #system('rbenv install 2.2.2')
+
+  # append this to bashrc
+  #export PATH="$HOME/.rbenv/bin:$PATH"
+  #eval "$(rbenv init -)"
+end
+
 desc 'Install these config files.'
 task :zzz_install, :home_dir do |t, args|
   args.with_defaults(home_dir: '~/')
@@ -51,9 +64,6 @@ task :zzz_install, :home_dir do |t, args|
   puts 'installing vundle'
   system("vim +PluginInstall +qall")
 
-  puts 'installing ruby 2.2.x'
-  system('rbenv install 2.2.2')
-  system('rbenv global 2.2.2')
 
   puts "(>'.')> DONE! <('.'<)"
 end

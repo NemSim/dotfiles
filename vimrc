@@ -11,13 +11,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" BWAAAAAAAAMMMMP
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kchmck/vim-coffee-script'
 
 " figure these out?
 "Plugin 'scrooloose/syntastic'
@@ -86,6 +86,7 @@ noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>n :echo 'Nem rules!'<CR>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 nnoremap <leader>a :Ag<space>
@@ -99,7 +100,10 @@ endif
 
 
 """ SUPERFICIAL """
-" support a colorscheme on iTerm but don't use it because it's silly
+" TODO: make this be a subtle color
+"set colorcolumn=80
+
+" support a different colorscheme on iTerm but don't use it because it's silly
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
     "set background=dark
@@ -109,6 +113,10 @@ if (&t_Co == 256 || has('gui_running'))
   endif
 endif
 
-" bits stolen from:
-" - https://github.com/square/maximum-awesome - helps vim work nicely with tmux
-"
+" source any local vim-ery
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+" Bits stolen from:
+" - https://github.com/square/maximum-awesome
