@@ -131,7 +131,7 @@ noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>n :echo 'Nem rules!'<CR>
+nnoremap <leader>nem :echo 'Nem rules!'<CR>
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
 " easymotion
