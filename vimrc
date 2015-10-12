@@ -21,6 +21,7 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
+Plugin 'altercation/vim-colors-solarized'
 
 " figure these out?
 "Plugin 'scrooloose/syntastic'
@@ -124,8 +125,9 @@ endif
 " TODO: make this be a subtle color
 "set colorcolumn=80
 
-set background=light
-"set background=dark
+"set background=light
+set background=dark
+colorscheme solarized
 
 " support a different colorscheme on iTerm but don't use it because it's silly
 "if (&t_Co == 256 || has('gui_running'))
