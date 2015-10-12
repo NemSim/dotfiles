@@ -1,5 +1,24 @@
 """ SETUP """
 "" $ vim +PluginInstall +qall
+"
+" Reference
+" leader key:                 ,
+" bring up NERDTree:          ,d
+" search with ag:             ,a
+" fuzzy find directory:       ,t
+" fuzzy find buffer:          ,b
+" swap light and dark themes: ,s
+"
+" surround.vim
+" examples:
+" change double quotes with single: cs"'
+" change single quote with tags: cs'<q>
+" change tags to quotes: cst"
+" remove quotes: ds"
+" surround word with []: ysiw]
+" (iw) - text object
+" wrap line in parens: yssb | yss)
+" select mode wrap in: S"
 
 """ FUNCTIONAL """
 
@@ -22,6 +41,8 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-surround'
+Plugin 'easymotion/vim-easymotion'
 
 " figure these out?
 "Plugin 'scrooloose/syntastic'
@@ -110,6 +131,8 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>n :echo 'Nem rules!'<CR>
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
+" easymotion
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 nnoremap <leader>a :Ag<space>
 if executable('ag')
@@ -147,7 +170,10 @@ endif
 " Bits stolen from:
 " - https://github.com/square/maximum-awesome
 
+" statusline always
 :set laststatus=2
+
+" copypasta from statusline to work with everything
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
