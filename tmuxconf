@@ -9,6 +9,9 @@ set -g base-index 1
 # Easy config reload
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
+# break out pane into new window
+bind-key m :break-pane
+
 # leader + A sends the prefix of ^A up
 # this is so you can jump to the beginning of the line in the shell
 bind-key a send-prefix
