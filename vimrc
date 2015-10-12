@@ -19,6 +19,9 @@
 " (iw) - text object
 " wrap line in parens: yssb | yss)
 " select mode wrap in: S"
+"
+" easymotion:
+" ,,s - does single character search
 
 """ FUNCTIONAL """
 
