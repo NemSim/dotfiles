@@ -2,6 +2,7 @@
 "" $ vim +PluginInstall +qall
 "
 " Reference
+" ---------
 " leader key:                 ,
 " bring up NERDTree:          ,d
 " search with ag:             ,a
@@ -9,7 +10,7 @@
 " fuzzy find buffer:          ,b
 " swap light and dark themes: ,s
 "
-" surround.vim
+" surround.vim:
 " examples:
 " change double quotes with single: cs"'
 " change single quote with tags: cs'<q>
@@ -22,6 +23,10 @@
 "
 " easymotion:
 " ,,s - does single character search
+"
+" comment:
+" ,cc - comment selection
+" ,cu - uncomment selection
 
 """ FUNCTIONAL """
 
@@ -148,6 +153,10 @@ endif
 
 
 """ SUPERFICIAL """
+
+" statusline always
+:set laststatus=2
+
 " TODO: make this be a subtle color
 "set colorcolumn=80
 
@@ -172,9 +181,6 @@ endif
 
 " Bits stolen from:
 " - https://github.com/square/maximum-awesome
-
-" statusline always
-:set laststatus=2
 
 " copypasta from statusline to work with everything
 let g:lightline = {

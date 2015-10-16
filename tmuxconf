@@ -9,6 +9,10 @@ set -g base-index 1
 # Easy config reload
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
+# Bind keys to expand or shrink pane
+bind-key < resize-pane -L 25
+bind-key > resize-pane -R 25
+
 # break out pane into new window
 bind-key m :break-pane
 
