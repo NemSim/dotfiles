@@ -13,6 +13,9 @@ bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 bind-key < resize-pane -L 25
 bind-key > resize-pane -R 25
 
+# bind keys to synchronize panes
+bind-key Q set synchronize-pane
+
 # break out pane into new window
 bind-key m :break-pane
 

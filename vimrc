@@ -83,9 +83,9 @@ let g:gitgutter_sign_modified = '*~'
 let g:gitgutter_sign_removed = 'xx'
 
 " Support resizing in tmux
-if exists('$TMUX')
-  set ttymouse=xterm2
-endif
+"if exists('$TMUX')
+  "set ttymouse=xterm2
+"endif
 
 set autoindent
 
