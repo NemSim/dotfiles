@@ -13,20 +13,15 @@ bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 bind-key < resize-pane -L 25
 bind-key > resize-pane -R 25
 
-# bind keys to synchronize panes
+# bind key to synchronize panes
 bind-key Q set synchronize-pane
-
-# break out pane into new window
-bind-key m :break-pane
 
 # leader + A sends the prefix of ^A up
 # this is so you can jump to the beginning of the line in the shell
 bind-key a send-prefix
 
 # mouse behavior
-setw -g mode-mouse on
-set -g mouse-select-pane on
-set -g mouse-resize-pane on
+set -g mouse on
 
 set-option -g default-terminal screen-256color
 

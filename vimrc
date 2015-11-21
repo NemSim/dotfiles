@@ -51,6 +51,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
+"Plugin 'james9909/stackanswers.vim'
 
 " figure these out?
 "Plugin 'scrooloose/syntastic'
