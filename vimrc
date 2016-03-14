@@ -51,6 +51,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
+"Plugin 'octol/vim-cpp-enhanced-highlight'
 "Plugin 'james9909/stackanswers.vim'
 
 " figure these out?
@@ -139,6 +140,7 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+"nnoremap <C-b> :make<CR>
 
 " easymotion
 
