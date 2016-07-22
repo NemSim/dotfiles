@@ -51,12 +51,12 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-surround'
 Plugin 'easymotion/vim-easymotion'
-"Plugin 'octol/vim-cpp-enhanced-highlight'
-"Plugin 'james9909/stackanswers.vim'
 
-" figure these out?
-"Plugin 'scrooloose/syntastic'
+" Track the engine.
+Plugin 'SirVer/ultisnips'
 
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
 
 call vundle#end()
 filetype plugin indent on
@@ -66,6 +66,16 @@ inoremap jk <ESC>
 
 " it seems silly to disregard mice altogether
 set mouse=a
+
+" snippets
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 " background of gitgutter
 " black black white text
@@ -90,16 +100,6 @@ let g:gitgutter_sign_removed = 'xx'
 "endif
 
 set autoindent
-
-" syntastic recommended defaults, change up
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-" above this?
 
 " \/ research this? seems sketchy
 "set backupcopy=yes              " see :help crontab
@@ -140,9 +140,8 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+nnoremap <leader>c :echo 'autocomplete'<CR>
 "nnoremap <C-b> :make<CR>
-
-" easymotion
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 nnoremap <leader>a :Ag<space>
@@ -176,6 +175,10 @@ colorscheme solarized
     "colorscheme desert
   "endif
 "endif
+
+" plugin/highlight.vim
+"set hlsearch
+"set number
 
 " source any local vim-ery
 if filereadable(expand("~/.vimrc.local"))
