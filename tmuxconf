@@ -9,6 +9,9 @@ set -g base-index 1
 # Easy config reload
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
+# bind key to start pom timer
+bind-key P run "thyme -d"\; display-message "pom"
+
 # Bind keys to expand or shrink pane
 bind-key < resize-pane -L 25
 bind-key > resize-pane -R 25
@@ -88,8 +91,8 @@ set-option -g pane-border-fg black
 # reddish window status text
 set-window-option -g window-status-current-fg brightred
 
-set-option -g status-right '#(cat ~/.thyme-tmux) %l:%M%p'
-set-option -g status-left 'ಠ_ಠ'
+set-option -g status-right '#(cat ~/.thyme-tmux)'
+set-option -g status-left '%k:%M ಠ_ಠ'
 
 source-file ~/.tmux.conf.local
 
