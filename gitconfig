@@ -1,8 +1,12 @@
 [user]
-	name = Nemanja Simeunovic
-	email = nem@nemsim.com
+  name = Nemanja Simeunovic
+  email = nem@nemsim.com
+
+[core]
+  editor = vim
+
 [push]
-	default = upstream
+  default = upstream
 
 [color]
   ui = auto
@@ -35,6 +39,3 @@
 
   # Show files ignored by git:
   ign = ls-files -o -i --exclude-standard
-
-[core]
-	editor = vim
