@@ -1,0 +1,40 @@
+[user]
+	name = Nemanja Simeunovic
+	email = nem@nemsim.com
+[push]
+	default = upstream
+
+[color]
+  ui = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[alias]
+  st = status
+  # ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  # dc = diff --cached
+  lg = log -p
+  # lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  # lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+  # ls = ls-files
+  # punch = blame
+
+  # Show files ignored by git:
+  ign = ls-files -o -i --exclude-standard
+
+[core]
+	editor = vim
