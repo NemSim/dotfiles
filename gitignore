@@ -9,4 +9,4 @@
 *.sublime-workspace
 
 # Scratch file
-*scratch.nem
+*.scratch.nem
