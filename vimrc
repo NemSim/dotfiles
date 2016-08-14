@@ -140,7 +140,7 @@ nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
-nnoremap <leader>c :echo 'autocomplete'<CR>
+nnoremap <leader>w :highlight Normal ctermfg=grey ctermbg=black<CR>
 "nnoremap <C-b> :make<CR>
 
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
@@ -153,7 +153,6 @@ if executable('ag')
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-
 """ SUPERFICIAL """
 
 " statusline always
@@ -165,6 +164,9 @@ endif
 "set background=light
 set background=dark
 colorscheme solarized
+
+highlight Normal ctermbg=black
+
 
 " support a different colorscheme on iTerm but don't use it because it's silly
 "if (&t_Co == 256 || has('gui_running'))

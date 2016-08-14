@@ -10,7 +10,7 @@ set -g base-index 1
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
 # bind key to start pom timer
-bind-key P run "thyme -d"\; display-message "pom"
+bind-key P run "thyme -d"
 
 # Bind keys to expand or shrink pane
 bind-key < resize-pane -L 25
