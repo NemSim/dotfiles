@@ -1,5 +1,7 @@
 # dotfiles
 
+@nemsim
+
 ## setup
 ```
 git clone https://github.com/NemSim/dotfiles
