@@ -3,14 +3,16 @@
 echo 'bootstrapping...'
 
 if [[ ! -d $HOME/dotfiles ]]; then
-  echo "no dotfiles folder found at ${HOME}/dotfiles"
-  echo "aborting bootstrap operation"
+  echo 'dotfiles folder not found at ${HOME}/dotfiles'
+  echo ' put the folder there and try again'
+  echo 'aborting'
   exit 1
 fi
 
 if [[ "$PWD" == *bootstrap ]]; then
-  echo "run bootstrap from parent directory"
-  echo "aborting bootstrap operation"
+  echo 'run init.sh from dotfiles directory'
+  echo ' (parent of this)'
+  echo 'aborting'
   exit 1
 fi
 
