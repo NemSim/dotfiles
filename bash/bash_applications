@@ -1,0 +1,5 @@
+# applications that need to be configured/registered with the shell
+
+# e.g. for rbenv
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"

@@ -7,6 +7,21 @@ case $- in
       *) return;;
 esac
 
+force_color_prompt=yes
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
 # aliases
 if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
@@ -15,6 +30,11 @@ fi
 # applications (e.g. rbenv setup)
 if [ -f ~/.bash_applications ]; then
 	. ~/.bash_applications
+fi
+
+# local applications (e.g. secret stuff)
+if [ -f ~/.bash_applications.local ]; then
+	. ~/.bash_applications.local
 fi
 
 # source "./tools/z/z.sh"

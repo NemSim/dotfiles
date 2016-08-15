@@ -6,7 +6,7 @@
   editor = vim
 
 [push]
-  default = upstream
+  default = simple
 
 [color]
   ui = auto

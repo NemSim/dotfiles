@@ -46,10 +46,10 @@ bind-key l select-pane -R
 # bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys C-l) || tmux select-pane -R"
 # bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 # bind C-l send-keys 'C-l'
-# 
-# bind-key c new-window
-# bind-key t next-window
-# bind-key T previous-window
+
+bind-key c new-window
+bind-key t next-window
+bind-key T previous-window
 # 
 # bind-key [ copy-mode
 # 
@@ -95,8 +95,8 @@ set-window-option -g window-status-current-fg brightred
 # set-option -g status-right '#(cat ~/.thyme-tmux)'
 set-option -g status-right 'nem rules'
 set-option -g status-left '%k:%M ಠ_ಠ'
-# 
+
 # source-file ~/.tmux.conf.local
-# 
+
 # # bits stolen from:
 # # - https://github.com/square/maximum-awesome - helps vim work nicely with tmux

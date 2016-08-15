@@ -35,12 +35,13 @@ syntax enable
 """ (>'.')> vundle <('.'<) """
 set nocompatible
 filetype off
-" set rtp+=~/.vim/bundle/Vundle.vim
-" call vundle#begin()
-" 
-" Plugin 'VundleVim/Vundle.vim'
-" Plugin 'scrooloose/nerdtree'
-" Plugin 'kien/ctrlp.vim'
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+ 
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
 " Plugin 'rking/ag.vim'
 " Plugin 'scrooloose/nerdcommenter'
 " Plugin 'christoomey/vim-tmux-navigator'
@@ -58,9 +59,37 @@ filetype off
 " " Snippets are separated from the engine. Add this if you want them:
 " Plugin 'honza/vim-snippets'
 " 
-" call vundle#end()
+call vundle#end()
 
 filetype plugin indent on
+
+set autoindent
+let mapleader = ','
+set directory-=.               " don't store swapfiles in the current directory
+set encoding=utf-8
+set expandtab                  " expand tabs to spaces
+set ignorecase                 " case-insensitive search
+set incsearch                  " search as you type
+set list                       " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫  " show tabs and trailing spaces
+set number                     " show line numbers
+set ruler                      " show where you are
+set softtabstop=2              " insert mode tab and backspace use 2 spaces
+set tabstop=2                  " actual tabs occupy 2 characters
+set shiftwidth=2
+
+" set wildmenu to list all matches
+set wildmode=list
+
+" " make sure Python tabs work
+" " but it doesn't work
+" autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
+
+" " automatically rebalance windows on vim resize
+" autocmd VimResized * :wincmd =
+" 
+" " TODO research this
+" "set backupcopy=yes              " see :help crontab
 " 
 " inoremap jj <ESC>
 " inoremap jk <ESC>
@@ -100,34 +129,6 @@ filetype plugin indent on
 "   "set ttymouse=xterm2
 " "endif
 " 
-set autoindent
-" 
-" " \/ research this? seems sketchy
-" "set backupcopy=yes              " see :help crontab
-
-set directory-=.               " don't store swapfiles in the current directory
-set encoding=utf-8
-set expandtab                  " expand tabs to spaces
-set ignorecase                 " case-insensitive search
-set incsearch                  " search as you type
-set list                       " show trailing whitespace
-" set listchars=tab:▸\ ,trail:▫  " beep
-set number                     " show line numbers
-set ruler                      " show where you are
-" 
-set softtabstop=2 " insert mode tab and backspace use 2 spaces
-set tabstop=2     " actual tabs occupy 2 characters
-set shiftwidth=2
-" 
-" " make sure Python tabs work
-" " but it doesn't work
-" autocmd Filetype python setlocal expandtab tabstop=4 shiftwidth=4
-" 
-" " automatically rebalance windows on vim resize
-" autocmd VimResized * :wincmd =
-" 
-" set wildmenu
-" set wildmode=list
 " 
 " " makes it a lil easier to navigate vim panes in tmux without leaving vim
 " noremap <C-h> <C-w>h
@@ -135,10 +136,9 @@ set shiftwidth=2
 " noremap <C-k> <C-w>k
 " noremap <C-l> <C-w>l
 " 
-let mapleader = ','
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-" nnoremap <leader>d :NERDTreeToggle<CR>
-" nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>d :NERDTreeToggle<CR>
+nnoremap <leader>t :CtrlP<CR>
 " nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 " nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
@@ -157,8 +157,8 @@ nnoremap <leader>nem :echo 'Nem rules!'<CR>
 " 
 " """ SUPERFICIAL """
 " 
-" " statusline always
-" :set laststatus=2
+" statusline always
+:set laststatus=2
 " 
 " " TODO: make this be a subtle color
 " "set colorcolumn=80
