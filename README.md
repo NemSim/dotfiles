@@ -1,7 +1,6 @@
 # dotfiles
 
-for vim and tmux
-
+## setup
 ```
 git clone https://github.com/NemSim/dotfiles
 cd dotfiles

@@ -21,9 +21,15 @@ fi
 # ruby manager?
 # TODO
 
+# TODO
 # thyme - pomodoro timer
 # (requires ruby)
-# https://github.com/hughbien/thyme
-# TODO
+if ! program_exists thyme; then
+  echo 'you need to install thyme'
+  echo 'see: https://github.com/hughbien/thyme'
+  exit 1
+else
+  echo 'thyme found'
+fi
 
 echo 'finished'

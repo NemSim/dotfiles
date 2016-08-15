@@ -2,9 +2,6 @@
 
 echo 'bootstrapping...'
 
-echo "${HOME}"
-echo "${PWD}"
-
 if [[ ! -d $HOME/dotfiles ]]; then
   echo "no dotfiles folder found at ${HOME}/dotfiles"
   echo "aborting bootstrap operation"
@@ -17,9 +14,9 @@ if [[ "$PWD" == *bootstrap ]]; then
   exit 1
 fi
 
+source "$PWD/bootstrap/tools.sh"
 source "$PWD/bootstrap/shell-bash.sh"
 source "$PWD/bootstrap/dotfiles.sh"
 source "$PWD/bootstrap/vim.sh"
-source "$PWD/bootstrap/tools.sh"
 
-echo 'finished!'
+echo 'finished bootstrapping'
