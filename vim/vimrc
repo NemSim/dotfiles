@@ -38,27 +38,26 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
- 
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'rking/ag.vim'
-" Plugin 'scrooloose/nerdcommenter'
-" Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'kchmck/vim-coffee-script'
 " Plugin 'vim-ruby/vim-ruby'
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'itchyny/lightline.vim'
 " Plugin 'altercation/vim-colors-solarized'
-" Plugin 'tpope/vim-surround'
 " Plugin 'easymotion/vim-easymotion'
-" 
-" " Track the engine.
+" " Snippets
+" " the engine.
 " Plugin 'SirVer/ultisnips'
 " 
-" " Snippets are separated from the engine. Add this if you want them:
+" " the snippets
 " Plugin 'honza/vim-snippets'
-" 
 call vundle#end()
 
 filetype plugin indent on
@@ -66,7 +65,7 @@ filetype plugin indent on
 set autoindent
 let mapleader = ','
 set directory-=.               " don't store swapfiles in the current directory
-set encoding=utf-8
+set encoding=utf-8             " always
 set expandtab                  " expand tabs to spaces
 set ignorecase                 " case-insensitive search
 set incsearch                  " search as you type
@@ -128,19 +127,19 @@ set wildmode=list
 " "if exists('$TMUX')
 "   "set ttymouse=xterm2
 " "endif
-" 
-" 
+
 " " makes it a lil easier to navigate vim panes in tmux without leaving vim
 " noremap <C-h> <C-w>h
 " noremap <C-j> <C-w>j
 " noremap <C-k> <C-w>k
 " noremap <C-l> <C-w>l
 " 
-noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <leader>d :NERDTreeToggle<CR>
 nnoremap <leader>t :CtrlP<CR>
-" nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
+noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 " nnoremap <leader>w :highlight Normal ctermfg=grey ctermbg=black<CR>
 " "nnoremap <C-b> :make<CR>
