@@ -13,24 +13,29 @@
 #   cp $HOME/$arg1 arg2
 # }
 
-# TODO refactor
+link_file_with_backup() {
+  local filetolink=$1
+  local targetname=$2
+
+  if [[ -f $targetname ]]; then
+    echo "backing up ${targetname} to ${targetname}.backup"
+    cp $targetname ${targetname}.backup
+  fi
+
+  echo "linking ${targetname}"
+  ln -sf $filetolink $targetname
+}
 
 echo 'bootstrapping dotfiles'
 
-# TODO git
+# vim
+link_file_with_backup $HOME/dotfiles/vim/vimrc $HOME/.vimrc
 
-if [[ -f $HOME/.vimrc ]]; then
-  echo "backing up .vimrc to ${HOME}/.vimrc.backup"
-  cp $HOME/.vimrc $HOME/.vimrc.backup
-fi
+# tmux
+link_file_with_backup $HOME/dotfiles/tmux/tmuxconf $HOME/.tmux.conf
 
-ln -sf $HOME/dotfiles/vim/vimrc $HOME/.vimrc
-
-if [[ -f $HOME/.tmux.conf ]]; then
-  echo "backing up .tmux.conf to ${HOME}/.tmux.conf.backup"
-  cp $HOME/.tmux.conf $HOME/.tmux.conf.backup
-fi
-
-ln -sf $HOME/dotfiles/tmux/tmuxconf $HOME/.tmux.conf
+# git
+link_file_with_backup $HOME/dotfiles/git/gitconfig $HOME/.gitconfig
+link_file_with_backup $HOME/dotfiles/git/gitignore $HOME/.gitignore
 
 echo 'finished'
