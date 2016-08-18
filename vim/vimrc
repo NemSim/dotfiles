@@ -4,6 +4,7 @@
 "
 " leader key:                    ,
 " ,V - reloads vimrc
+" ,s - switch between light and dark solarized
 "
 " scrooloose/nerdree
 "   bring up NERDTree:          ,d
@@ -94,6 +95,10 @@ set shiftwidth=2               " indent 2 columns of text with reindent operatio
 set laststatus=2               " always show statusline
 set wildmode=list              " set wildmenu to list all matches
 
+" make it nice and solarized
+set background=dark
+colorscheme solarized
+
 " makes it a lil easier to navigate vim panes in tmux without leaving vim
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -109,6 +114,10 @@ nnoremap <leader>d :NERDTreeToggle<CR>
 " CtrlP stuff
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+" switch between light and dark backgrounds with ,s
+nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 
 " narcissism
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
