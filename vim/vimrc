@@ -1,38 +1,42 @@
 " nem's vimrc
 "
-" leader key:                    ,
-" ,V - reloads vimrc
 " vundle package manager
 "
+" leader key:                    ,
+" ,V - reloads vimrc
+"
 " scrooloose/nerdree
-"    bring up NERDTree:          ,d
+"   bring up NERDTree:          ,d
 "
 " 'kien/ctrlp.vim'
-"    fuzzy find directory:       ,t
-"    fuzzy find buffer:          ,b
+"   fuzzy find directory:       ,t
+"   fuzzy find buffer:          ,b
 "
 " 'rking/ag.vim'
-"    search with ag:             ,a
+"   search with ag:             ,a
 "
 " 'tpope/vim-surround'
-"    surround.vim:
-"    examples:
-"    change double quotes with single: cs"'
-"    change single quote with tags: cs'<q>
-"    change tags to quotes: cst"
-"    remove quotes: ds"
-"    surround word with []: ysiw]
-"    (iw) - text object
-"    wrap line in parens: yssb | yss)
-"    select mode wrap in: S"
+"   surround.vim:
+"   examples:
+"   change double quotes with single: cs"'
+"   change single quote with tags: cs'<q>
+"   change tags to quotes: cst"
+"   remove quotes: ds"
+"   surround word with []: ysiw]
+"   (iw) - text object
+"   wrap line in parens: yssb | yss)
+"   select mode wrap in: S"
 "
 " 'scrooloose/nerdcommenter'
-"    ,cc - comment selection
-"    ,cu - uncomment selection
+"   ,cc - comment selection
+"   ,cu - uncomment selection
+"
+" 'easymotion/vim-easymotion'
+"   ,,s - single character search
 
 """ FUNCTIONAL """
 
-syntax enable
+syntax on
 set nocompatible
 filetype off
 
@@ -48,6 +52,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'rking/ag.vim'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'altercation/vim-colors-solarized'
 
 " Snippets
 Plugin 'SirVer/ultisnips' " engine
@@ -60,13 +66,19 @@ call vundle#end()
 " $ vim +PluginInstall +qall
 """ (>'.')> vundle stuff END <('.'<) """
 
+" just regular filetype stuff
 filetype plugin indent on
+
+" enable mouse
+set mouse=a
 
 " jk escapes insert mode
 inoremap jk <ESC>
 
-set autoindent
+" comma as leader key
 let mapleader = ','
+
+set autoindent                 " automatically indent when applicable
 set directory-=.               " don't store swapfiles in the current directory
 set encoding=utf-8             " always
 set expandtab                  " expand tabs to spaces
@@ -78,7 +90,7 @@ set number                     " show line numbers
 set ruler                      " show where you are
 set softtabstop=2              " insert mode tab and backspace use 2 spaces
 set tabstop=2                  " actual tabs occupy 2 characters
-set shiftwidth=2
+set shiftwidth=2               " indent 2 columns of text with reindent operation
 set laststatus=2               " always show statusline
 set wildmode=list              " set wildmenu to list all matches
 
@@ -88,16 +100,22 @@ noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-" reload config
+" reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" show nerdtree
 nnoremap <leader>d :NERDTreeToggle<CR>
+
+" CtrlP stuff
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
+
+" narcissism
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 
 " more specific configs
 
-" Use The Silver Searcher for stuff
+" Use The Silver Searcher for search stuff
 nnoremap <leader>a :Ag<space>
 if executable('ag')
   " Use Ag over Grep
@@ -112,9 +130,9 @@ endif
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " :UltiSnipsEdit splits window.
 let g:UltiSnipsEditSplit="vertical"
-
 
 " gitgutter
 " background of gitgutter
