@@ -20,5 +20,6 @@ source "$PWD/bootstrap/tools.sh"
 source "$PWD/bootstrap/shell-bash.sh"
 source "$PWD/bootstrap/dotfiles.sh"
 source "$PWD/bootstrap/vim.sh"
+source "$PWD/bootstrap/final-stuff.sh"
 
 echo 'finished bootstrapping'

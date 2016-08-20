@@ -15,12 +15,12 @@
 
 echo 'bootstrapping bash shell'
 
-# if [[ -f $HOME/.bashrc ]]; then
-#   echo "backing up .bashrc to ${HOME}/.bashrc.backup"
-#   cp $HOME/.bashrc $HOME/.bashrc.backup
-# fi
-#
-# ln -sf $HOME/dotfiles/bash/bashrc $HOME/.bashrc
+if [[ -f $HOME/.bashrc ]]; then
+  echo "backing up .bashrc to ${HOME}/.bashrc.backup"
+  cp $HOME/.bashrc $HOME/.bashrc.backup
+fi
+
+ln -sf $HOME/dotfiles/bash/bashrc $HOME/.bashrc
 
 if [[ -f $HOME/.bash_aliases ]]; then
   echo "backing up .bash_aliases to ${HOME}/.bash_aliases.backup"

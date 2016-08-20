@@ -6,12 +6,40 @@ program_exists() {
   type $1 > /dev/null 2>&1
 }
 
+ensure_exists() {
+  if [[ ! -d $1 ]]; then
+    echo "creating ${1}"
+    mkdir $1
+  fi
+}
+
 echo 'bootstrapping tools'
 
 # tools directory
-if [[ ! -d $HOME/.nem-tools ]]; then
-  echo 'creating ~/.nem-tools'
-  mkdir $HOME/.nem-tools
+ensure_exists $HOME/.nem-tools
+
+# git
+if ! program_exists git; then
+  echo 'you need to install git'
+  exit 1
+else
+  echo 'git found'
+fi
+
+# vim
+if ! program_exists vim; then
+  echo 'you need to install vim'
+  exit 1
+else
+  echo 'vim found'
+fi
+
+# tmux
+if ! program_exists tmux; then
+  echo 'you need to install tmux'
+  exit 1
+else
+  echo 'tmux found'
 fi
 
 # ag - the silver searcher
@@ -26,36 +54,10 @@ fi
 
 # rbenv ruby manager
 if ! program_exists rbenv; then
-  echo 'you need to install rbenv'
-  exit 1
-  # TODO
-  # git clone git@github.com:sstephenson/rbenv.git $HOME/.rbenv
+  echo 'installing rbenv'
+  git clone git@github.com:sstephenson/rbenv.git $HOME/.rbenv
 else
   echo 'rbenv found'
-fi
-
-if program_exists rbenv; then
-  echo 'installing rbenv plugins'
-  # git clone git@github.com:sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-  # git clone git@github.com:sstephenson/rbenv-default-gems.git $HOME/.rbenv/plugins/rbenv-default-gems
-
-  # install a newish ruby, not here though?
-  # rbenv install 2.2.0
-  # set it as global
-  # rbenv global 2.2.0
-else
-  echo 'rbenv not found?'
-fi
-
-# TODO install this as a default gem
-# thyme - pomodoro timer
-# (requires ruby)
-if ! program_exists thyme; then
-  echo 'you need to install thyme'
-  echo 'see: https://github.com/hughbien/thyme'
-  exit 1
-else
-  echo 'thyme found'
 fi
 
 echo 'finished'
