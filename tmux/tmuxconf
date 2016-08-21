@@ -12,8 +12,12 @@ set-option -g prefix C-a
 unbind-key C-a
 bind-key C-a send-prefix
 
+# support emacs cursor movement
+bind-key a send-prefix
+
 # use UTF-8
-set-option -g utf8
+set-option -g utf8 on
+set-option -g status-utf8 on
 set-window-option -g utf8 on
 
 # display things in 256 colors
@@ -26,6 +30,7 @@ set-window-option -g pane-base-index 1
 
 # enable mouse
 set-option -g mouse on
+# < 2.1
 set-window-option -g mode-mouse on
 set-option -g mouse-select-pane on
 set-option -g mouse-resize-pane on
@@ -35,6 +40,15 @@ set-option -g mouse-select-window on
 bind-key c new-window
 bind-key t next-window
 bind-key T previous-window
+
+# copy mode
+bind-key [ copy-mode
+
+# vim-like copy-mode
+# setup 'v' to begin selection, use vim keys
+setw -g mode-keys vi
+bind-key -t vi-copy v begin-selection
+# TODO bind paste-buffer
 
 # expand or shrink pane
 bind-key < resize-pane -L 25
@@ -67,14 +81,20 @@ set-window-option -g display-panes-time 2000
 
 # status bar update every second
 set-option -g status-interval 1
-# center window list in status bar
-set-option -g status-justify centre
 
+# status-right
+# show thyme output if timer is going
+# TODO show default text otherwise
+set-option -g status-right-length 20
+set-option -g status-right '#(cat ~/.thyme-tmux)'
 
-# leave status-right blank
-# clock on status-left
+# status-left
+# clock
+set-option -g status-left-length 20
 set-option -g status-left '%k:%M'
 
+# center window list in status bar
+set-option -g status-justify centre
 
 ### COLORS ###
 ## old colors
@@ -124,8 +144,6 @@ set-window-option -g clock-mode-colour colour64 #green
 # https://github.com/hughbien/thyme
 # bind key to start pom timer
 bind-key P run "thyme -d"
-# show thyme output if timer is going
-set-option -g status-right '#(cat ~/.thyme-tmux)'
 
 
 # TODO source a .local file if present
