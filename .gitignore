@@ -1,3 +1,6 @@
 # ignore vagrant things
 .vagrant/
 vagrant/.vagrant/
+
+# logs
+*.log

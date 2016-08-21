@@ -11,3 +11,6 @@
         - silversearcher-ag
         - vim
         - tmux
+        - libssl-dev
+        - libreadline-dev
+        - zlib1g-dev

@@ -55,7 +55,7 @@ fi
 # rbenv ruby manager
 if ! program_exists rbenv; then
   echo 'installing rbenv'
-  git clone git@github.com:sstephenson/rbenv.git $HOME/.rbenv
+  git clone https://github.com/sstephenson/rbenv.git $HOME/.rbenv
 else
   echo 'rbenv found'
 fi

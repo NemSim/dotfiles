@@ -17,8 +17,9 @@ if [[ "$PWD" == *bootstrap ]]; then
 fi
 
 source "$PWD/bootstrap/tools.sh"
-source "$PWD/bootstrap/shell-bash.sh"
 source "$PWD/bootstrap/dotfiles.sh"
+echo 'sourcing bashrc...'
+source "$HOME/.bashrc"
 source "$PWD/bootstrap/vim.sh"
 source "$PWD/bootstrap/final-stuff.sh"
 
