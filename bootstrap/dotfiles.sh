@@ -23,6 +23,13 @@ link_file_with_backup() {
     cp $targetname ${targetname}.backup
   fi
 
+  link_file $filetolink $targetname
+}
+
+link_file() {
+  local filetolink=$1
+  local targetname=$2
+
   echo "linking ${targetname}"
   ln -sf $filetolink $targetname
 }
@@ -32,9 +39,10 @@ echo 'bootstrapping dotfiles'
 # bash
 echo '... bash'
 link_file_with_backup $HOME/dotfiles/bash/bashrc $HOME/.bashrc
+link_file_with_backup $HOME/dotfiles/bash/bash_functions $HOME/.bash_functions
 link_file_with_backup $HOME/dotfiles/bash/bash_aliases $HOME/.bash_aliases
 link_file_with_backup $HOME/dotfiles/bash/bash_applications $HOME/.bash_applications
-echo '... sourcing bashrc'
+cp -n $HOME/dotfiles/bash/bash_stuff.local $HOME/.bash_stuff.local
 
 # vim
 echo '... vim'

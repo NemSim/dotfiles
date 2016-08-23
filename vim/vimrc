@@ -54,7 +54,8 @@ syntax on
 " enable mouse
 set mouse=a
 
-" jk escapes insert mode
+" j(j|k) escapes insert mode
+inoremap jj <ESC>
 inoremap jk <ESC>
 
 " comma as leader key

@@ -1,0 +1,9 @@
+#!/bin/bash
+# applications/functions/env_vars that are specific to the local machine
+alias dowork=work
+
+function work() {
+  echo "define work() in ~/.bash_stuff.local"
+  echo "arg1: $1"
+  echo "args: '$@'"
+}

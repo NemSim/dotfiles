@@ -1,3 +1,4 @@
+#!/bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 
@@ -6,14 +7,19 @@ if [ -f ~/.bash_aliases ]; then
 	. ~/.bash_aliases
 fi
 
+# functions
+if [ -f ~/.bash_functions ]; then
+	. ~/.bash_functions
+fi
+
 # applications (e.g. rbenv setup)
 if [ -f ~/.bash_applications ]; then
 	. ~/.bash_applications
 fi
 
-# local applications (e.g. secret stuff)
-if [ -f ~/.bash_applications.local ]; then
-	. ~/.bash_applications.local
+# any local bashery
+if [ -f ~/.bash_stuff.local ]; then
+	. ~/.bash_stuff.local
 fi
 
 ## If not running interactively, don't do anything
@@ -42,6 +48,23 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+#http://ethanschoonover.com/solarized
+#base03:    #002b36
+#base02:    #073642
+#base01:    #586e75
+#base00:    #657b83
+#base0:     #839496
+#base1:     #93a1a1
+#base2:     #eee8d5
+#base3:     #fdf6e3
+#yellow:    #b58900
+#orange:    #cb4b16
+#red:       #dc322f
+#magenta:   #d33682
+#violet:    #6c71c4
+#blue:      #268bd2
+#cyan:      #2aa198
+#green:     #859900
 if [ "$color_prompt" = yes ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 else

@@ -13,6 +13,7 @@ ensure_exists() {
   fi
 }
 
+# mandatory
 if program_exists vim; then
   echo 'installing vim plugins'
   vim -u $HOME/dotfiles/vim/bundles.vim +PluginInstall +qall
@@ -20,6 +21,7 @@ else
   echo 'vim not found'
 fi
 
+# TODO make optional below this point
 
 rbenv_path=${RBENV_ROOT:-$HOME/.rbenv}
 rbenv_plugins_path=$rbenv_path/plugins
@@ -46,9 +48,9 @@ fi
 
 # install a newish ruby
 if program_exists rbenv; then
-  echo 'installing ruby 2.2.2'
-  rbenv install 2.2.2
-  rbenv global 2.2.2
+  echo 'installing ruby 2.3.1'
+  rbenv install 2.3.1
+  rbenv global 2.3.1
 else
   echo 'rbenv not found?'
 fi

@@ -86,15 +86,20 @@ set-option -g status-interval 1
 # show thyme output if timer is going
 # TODO show default text otherwise
 set-option -g status-right-length 20
-set-option -g status-right '#(cat ~/.thyme-tmux)'
+#set-option -g status-right '#(cat ~/.thyme-tmux)'
 
 # status-left
 # clock
-set-option -g status-left-length 20
-set-option -g status-left '%k:%M'
+set-option -g status-left-length 70
+#set-option -g status-left '%k:%M'
+set-option -g status-left "#[fg=#cb4b16]%a #[fg=#839496]%b %d #[fg=#93a1a1]| %H:%M %Z"
+set-option -g status-right "#[fg=#268bd2]\[#S\]"
 
 # center window list in status bar
 set-option -g status-justify centre
+# window list format
+set-option -g window-status-format '#I:#F'
+set-option -g window-status-current-format '#I:#W:#F'
 
 ### COLORS ###
 ## old colors
@@ -105,11 +110,33 @@ set-option -g status-justify centre
 ## reddish window status text
 #set-window-option -g window-status-current-fg brightred
 
+#TODO incorporate these
+#http://ethanschoonover.com/solarized
+#base03:    #002b36
+#base02:    #073642
+#base01:    #586e75
+#base00:    #657b83
+#base0:     #839496
+#base1:     #93a1a1
+#base2:     #eee8d5
+#base3:     #fdf6e3
+#yellow:    #b58900
+#orange:    #cb4b16
+#red:       #dc322f
+#magenta:   #d33682
+#violet:    #6c71c4
+#blue:      #268bd2
+#cyan:      #2aa198
+#green:     #859900
+
+# modifying this
 # https://github.com/altercation/solarized/blob/master/tmux/tmuxcolors-256.conf
 
 # default statusbar colors
-set-option -g status-bg colour235 #base02
-set-option -g status-fg colour136 #yellow
+set-option -g status-bg '#002b36' #base03
+#set-option -g status-bg colour235 #base02
+set-option -g status-fg '#839496' #base0
+#set-option -g status-fg colour136 #yellow
 set-option -g status-attr default
 
 # default window title colors

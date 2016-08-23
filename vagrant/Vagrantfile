@@ -5,6 +5,7 @@
 VAGRANTFILE_API_VERSION = '2'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # ubuntu 14.04 LTS (Trusty Tahr)
   config.vm.box = 'ubuntu/trusty64'
 
   # accessing "localhost:9090" will access port 80 on the vagrant machine.

@@ -7,10 +7,11 @@
     - name:       install required packages
       apt:        name={{ item }} state=present
       with_items:
+        - libssl-dev
+        - libreadline-dev
+        - zlib1g-dev
+        - g++-multilib
         - git
         - silversearcher-ag
         - vim
         - tmux
-        - libssl-dev
-        - libreadline-dev
-        - zlib1g-dev

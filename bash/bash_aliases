@@ -1,11 +1,23 @@
+#!/bin/bash
+
 alias up='cd ..'
 
 alias tmxnew='tmux new-session -s'
 alias tmxcon='tmux attach -t'
 alias tmxls='tmux ls'
 
+# git
+#  logs
+alias glo='git log --topo-order --pretty=format:${_git_log_oneline_format}'
+alias glg='git log --topo-order --all --graph --pretty=format:${_git_log_oneline_format}'
+#  commit
+alias gaam='git commit -a --amend --no-edit'
 alias gcm='git commit --message'
 alias gcam='git commit -a --message'
+#  branch
+alias gco='git checkout'
+alias gcom='git checkout'
+alias gbr='git branch'
 
 # alias gaam='git commit -a --amend --no-edit'
 # alias gcom='git checkout master'
