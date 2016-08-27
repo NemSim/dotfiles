@@ -14,6 +14,13 @@ ensure_exists() {
 }
 
 # mandatory
+
+# solarized ls
+echo 'setting up solarized dircolors'
+git clone https://github.com/seebi/dircolors-solarized $HOME/.nem-tools/dircolors-solarized
+cp $HOME/.nem-tools/dircolors-solarized/dircolors.256dark $HOME/.dircolors
+echo 'solarized dircolors'
+
 if program_exists vim; then
   echo 'installing vim plugins'
   vim -u $HOME/dotfiles/vim/bundles.vim +PluginInstall +qall
@@ -55,5 +62,24 @@ else
   echo 'rbenv not found?'
 fi
 
+# install a newish python
+if program_exists pyenv; then
+  echo 'installing python 3.5.2'
+  pyenv install -s 3.5.2
+  pyenv global 3.5.2
+  echo 'installing python 2.7.12'
+  pyenv install -s 2.7.12
+else
+  echo 'pyenv not found?'
+fi
+
+# TODO
+# git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+
+# install pip3 stuff
+echo 'you might want to'
+echo 'pip3 install'
+echo ' - asciinema'
+echo ' - jupyter'
 
 echo 'finished'

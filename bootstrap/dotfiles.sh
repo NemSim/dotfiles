@@ -61,4 +61,7 @@ link_file_with_backup $HOME/dotfiles/git/gitignore $HOME/.gitignore
 echo '... thymerc'
 link_file_with_backup $HOME/dotfiles/tools/thymerc $HOME/.thymerc
 
+# taskwarrior [task]
+link_file_with_backup $HOME/dotfiles/tools/taskrc $HOME/.taskrc
+
 echo 'finished'

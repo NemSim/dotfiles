@@ -1,0 +1,52 @@
+# [Created by task 2.2.0 8/26/2016 15:41:01]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-faq',
+# 'man task-tutorial', 'man task-color', 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# editor
+editor=vim
+
+# set locale
+locale=en-US.UTF8
+
+# Files
+data.location=~/.task
+
+# use color
+color=on
+
+# Color theme
+include /usr/share/task/solarized-dark-256.theme
+
+# nag
+nag=You have higher priority tasks!
+
+calendar.details=
+# holidays
+include /usr/share/task/holidays.en-US.rc
+calendar.holidays=full
+
+# customizations
+weekstart=monday
+
+# log start and stop time on tasks
+journal.time=on
+
+# date formatting
+dateformat=m/d/y-H:N:S
+dateformat.annotation=m/d/y-H:N
+dateformat.edit=m/d/y-H:N
+dateformat.holiday=YMD
+dateformat.info=m/d/y-H:N
+dateformat.report=a m/d/y-H:N
+
+# defaults
+default.priority=L
+default.project=personal

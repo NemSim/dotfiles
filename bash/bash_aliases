@@ -9,24 +9,22 @@ alias tmxls='tmux ls'
 # git
 #  short rev hash
 alias gver='git rev-parse --short HEAD'
+#  status
+alias gst='git status'
 #  logs
-alias gl='git log --topo-order --pretty=format:${_git_log_oneline_format}'
-alias glo='git log --topo-order --pretty=format:${_git_log_oneline_format}'
-alias glg='git log --topo-order --all --graph --pretty=format:${_git_log_oneline_format}'
+alias gl='git log --topo-order --pretty=format:"%Cred%h%Creset >> %Cgreen%ar%Creset%n -%C(yellow)%d%Creset %s %Cblue<%an>%Creset"'
+alias glo='git log --topo-order --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset \"%s\" %Cgreen%ar%Creset %Cblue<%an>%Creset"'
+alias glg='git log --topo-order --all --graph --pretty=format:"%Cred%h%Creset >> %ar%n -%C(yellow)%d%Creset %s <%an>"'
+
 #  commit
 alias gaam='git commit -a --amend --no-edit'
 alias gcm='git commit --message'
 alias gcam='git commit -a --message'
 #  branch
 alias gco='git checkout'
-alias gcom='git checkout'
+alias gcom='git checkout master'
 alias gbr='git branch'
-
-# alias gaam='git commit -a --amend --no-edit'
-# alias gcom='git checkout master'
-# alias gbr='git branch'
-# alias gst='git status'
-# alias glast='git log -n 1 -p'
+alias glast='git log -n 1 -p'
 
 # Ambient engine noise
 # requires package sox
@@ -37,7 +35,7 @@ alias gbr='git branch'
 # alias startpom="thyme && thyme -b"
 
 # Matrix
-# alias matrix='cmatrix -abs' # closes with a key
+alias matrix='cmatrix -abs' # closes with a key
 
 # calendar with todays date
 # alias tcal='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e) " -e "^$(date +%e)"'

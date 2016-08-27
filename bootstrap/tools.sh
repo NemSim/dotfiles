@@ -18,6 +18,8 @@ echo 'bootstrapping tools'
 # tools directory
 ensure_exists $HOME/.nem-tools
 
+
+
 # git
 if ! program_exists git; then
   echo 'you need to install git'
@@ -52,6 +54,17 @@ else
   echo 'ag found'
 fi
 
+# taskwarrior - cli task manager
+if ! program_exists task; then
+  echo 'you should install taskwarrior'
+  echo 'see: https://taskwarrior.org/download/'
+fi
+
+# qalc
+if ! program_exists qalc; then
+  echo 'you should install qalc'
+fi
+
 # rbenv ruby manager
 if ! program_exists rbenv; then
   echo 'installing rbenv'
@@ -60,4 +73,11 @@ else
   echo 'rbenv found'
 fi
 
-echo 'finished'
+# pyenv python manager
+if ! program_exists pyenv; then
+  echo 'installing pyenv'
+  git clone https://github.com/yyuu/pyenv.git $HOME/.pyenv
+  echo 'finished'
+else
+  echo 'pyenv found'
+fi

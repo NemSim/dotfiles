@@ -35,11 +35,6 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	color_prompt=yes
@@ -66,9 +61,23 @@ fi
 #cyan:      #2aa198
 #green:     #859900
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
+    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\n\$ '
+    PS1='\u@\h:\w\n\$ '
+fi
+
+
+# enable color support of ls
+# with solarized colors (final step)
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 fi
 
 # Update window size after every command
@@ -115,9 +124,8 @@ shopt -s cdable_vars
 
 # Examples:
 export dotfiles="$HOME/dotfiles"
-export documents="$HOME/Documents"
-export dropbox="$HOME/Dropbox"
-# export projects="$HOME/projects"
+export projects="$HOME/projects"
+export hacking="$HOME/hacking"
 
 # some stuff borrowed from
 # https://github.com/mrzool/bash-sensible/blob/master/sensible.bash

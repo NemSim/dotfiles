@@ -6,7 +6,7 @@
 ```
 git clone https://github.com/NemSim/dotfiles
 cd dotfiles
-bash bootstrap/init.sh
+bash bootstrap/full.sh
 ```
 
 ## vagrant setup
@@ -18,5 +18,5 @@ cd dotfiles/vagrant
 vagrant up
 vagrant ssh
 cd dotfiles
-bash bootstrap/init.sh
+bash bootstrap/full.sh
 ```
