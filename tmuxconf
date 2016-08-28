@@ -6,7 +6,7 @@ unbind-key C-a
 bind-key C-a send-prefix
 set -g base-index 1
 
-# Easy config reload
+# easy config reload
 bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
 
 # bind key to start pom timer
@@ -91,8 +91,19 @@ set-option -g pane-border-fg black
 # reddish window status text
 set-window-option -g window-status-current-fg brightred
 
-set-option -g status-right '#(cat ~/.thyme-tmux)'
-set-option -g status-left '%k:%M ಠ_ಠ'
+#set-option -g status-right '#(cat ~/.thyme-tmux)'
+#set-option -g status-left '%k:%M ಠ_ಠ'
+
+set-option -g status-left-length 70
+#set-option -g status-left '%k:%M'
+set-option -g status-left "#[fg=#cb4b16]%a #[fg=#839496]%b %d #[fg=#93a1a1]| %H:%M %Z"
+set-option -g status-right "#(cat ~/.thyme-tmux) #[fg=#268bd2]\[#S\]"
+
+# center window list in status bar
+set-option -g status-justify centre
+# window list format
+set-option -g window-status-format '#F:#I:#W'
+set-option -g window-status-current-format '#F:#I:#W'
 
 source-file ~/.tmux.conf.local
 
