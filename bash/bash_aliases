@@ -1,10 +1,44 @@
 #!/bin/bash
 
+# navigation
 alias up='cd ..'
 
+# vagrant
+alias sshvl='ssh vagrant@127.0.0.1 -p 2222'
+
+# taskwarrior
+alias t='task'
+## general
+alias ta='task add'
+alias tl='task list'
+alias tlg='task long'
+alias tp='task projects'
+alias tt='task tags'
+alias ts='task summary'
+alias tc='task calendar'
+## projects
+alias tpw='task project:work'
+alias tpp='task project:personal'
+alias tph='task project:hacking'
+alias ctpw='clear && task project:work'
+alias ctpp='clear && task project:personal'
+alias ctph='clear && task project:hacking'
+## reports
+alias tl='task list'
+alias tn='task next limit:10'
+alias tm='task minimal'
+alias tts='task timesheet'
+alias thm='task history.monthly'
+alias tgm='task ghistory.monthly'
+alias tbd='task burndown.daily'
+alias tbm='task burndown.monthly'
+
+
+# tmux
+#alias tmx='tmux attach -t NAME || tmux new -s NAME'
+alias tmxls='tmux ls'
 alias tmxnew='tmux new-session -s'
 alias tmxcon='tmux attach -t'
-alias tmxls='tmux ls'
 
 # git
 #  short rev hash
@@ -26,13 +60,13 @@ alias gcom='git checkout master'
 alias gbr='git branch'
 alias glast='git log -n 1 -p'
 
+# Pomodoro timer daemon with thyme
+alias startpom="thyme -r"
+
 # Ambient engine noise
 # requires package sox
 # http://www.reddit.com/r/commandline/comments/29le5u/generate_your_own_ambient_tng_enterprise_engine/
 # alias warp="play -c 2 -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120 gain +10"
-
-# Pomodoro timer daemon with thyme
-# alias startpom="thyme && thyme -b"
 
 # Matrix
 alias matrix='cmatrix -abs' # closes with a key
