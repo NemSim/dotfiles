@@ -57,6 +57,7 @@ alias gcam='git commit -a --message'
 #  branch
 alias gco='git checkout'
 alias gcom='git checkout master'
+alias gba='git branch -a'
 alias gbr='git branch'
 alias glast='git log -n 1 -p'
 
