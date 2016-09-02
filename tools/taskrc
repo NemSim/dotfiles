@@ -26,7 +26,7 @@ color=on
 include /usr/share/task/solarized-dark-256.theme
 
 # nag
-nag=You have higher priority tasks!
+nag=There's better things to be doing
 
 calendar.details=
 # holidays
@@ -40,7 +40,7 @@ weekstart=monday
 journal.time=on
 
 # date formatting
-dateformat=m/d/y-H:N:S
+dateformat=m/d/y-H:N
 dateformat.annotation=m/d/y-H:N
 dateformat.edit=m/d/y-H:N
 dateformat.holiday=YMD
