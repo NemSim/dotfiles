@@ -3,6 +3,7 @@
 " vundle package manager
 "
 " leader key:                    ,
+"
 " ,V - reloads vimrc
 " ,s - switch between light and dark solarized
 "
