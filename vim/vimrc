@@ -83,11 +83,10 @@ set background=dark
 colorscheme solarized
 
 " makes it a lil easier to navigate vim panes in tmux without leaving vim
-" FIXME broken?
-"noremap <C-h> <C-w>h
-"noremap <C-j> <C-w>j
-"noremap <C-k> <C-w>k
-"noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
