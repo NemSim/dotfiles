@@ -110,7 +110,6 @@ nnoremap <leader>nem :echo 'Nem rules!'<CR>
 
 " Use The Silver Searcher for search stuff
 let g:ackprg = 'ag --nogroup --nocolor --column'
-let g:ackprg = 'ag --vimgrep'
 
 " use ack which has been configured to use ag
 nnoremap <leader>a :Ack<space>
