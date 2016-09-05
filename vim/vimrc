@@ -14,7 +14,7 @@
 "   fuzzy find directory:       ,t
 "   fuzzy find buffer:          ,b
 "
-" 'rking/ag.vim'
+" 'mileszs/ack.vim'
 "   search with ag:             ,a
 "
 " 'tpope/vim-surround'
@@ -83,10 +83,11 @@ set background=dark
 colorscheme solarized
 
 " makes it a lil easier to navigate vim panes in tmux without leaving vim
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+" FIXME broken?
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
+"noremap <C-l> <C-w>l
 
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -108,14 +109,21 @@ nnoremap <leader>nem :echo 'Nem rules!'<CR>
 " more specific configs
 
 " Use The Silver Searcher for search stuff
-nnoremap <leader>a :Ag<space>
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  let g:ctrl_p_use_caching = 0
-endif
+let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --vimgrep'
+
+" use ack which has been configured to use ag
+nnoremap <leader>a :Ack<space>
+
+"nnoremap <leader>a :Ag<space>
+"if executable('ag')
+  "let g:ag_prg="/usr/bin/ag --nogroup --nocolor"
+  "" Use Ag over Grep
+  "set grepprg=ag\ --nogroup\ --nocolor
+  "" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  "let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  "let g:ctrl_p_use_caching = 0
+"endif
 
 " snippets
 " Trigger configuration
