@@ -62,7 +62,7 @@ alias gbr='git branch'
 alias glast='git log -n 1 -p'
 
 # Pomodoro timer daemon with thyme
-alias startpom="thyme -r"
+alias startpom="thyme -r -d"
 
 # Ambient engine noise
 # requires package sox

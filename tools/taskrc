@@ -39,14 +39,16 @@ weekstart=monday
 # log start and stop time on tasks
 journal.time=on
 
+# TODO I think I went overboard here
 # date formatting
 dateformat=m/d/y-H:N
+dateformat.holiday=YMD
 dateformat.annotation=m/d/y-H:N
 dateformat.edit=m/d/y-H:N
-dateformat.holiday=YMD
 dateformat.info=m/d/y-H:N
 dateformat.report=a m/d/y-H:N
 
 # defaults
+default.command=next limit:10
 default.priority=L
 default.project=personal

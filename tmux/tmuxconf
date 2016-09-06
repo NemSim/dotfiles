@@ -87,7 +87,7 @@ set-window-option -g display-panes-time 2000
 set-option -g status-interval 1
 
 # status-right
-set-option -g status-right-length 20
+set-option -g status-right-length 70
 # thyme counter and session name
 set-option -g status-right "#(cat ~/.thyme-tmux) #[fg=#268bd2]\[#S\]"
 

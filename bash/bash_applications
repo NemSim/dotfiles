@@ -5,6 +5,12 @@
 # pyenv
 export PATH="$HOME/.rbenv/bin:$HOME/.pyenv/bin:$PATH"
 
+# init rbenv stuff
 eval "$(rbenv init -)"
+
+# init pyenv stuff
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# now we can initialize stuff that depends on rbenv or pyenv
+complete -W "$(teamocil --list)" teamocil
