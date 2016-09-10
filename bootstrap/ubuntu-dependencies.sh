@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
-sudo apt-get upgrade git vim tmux task
+sudo apt-get install git vim tmux task
 sudo apt-get install\
   silversearcher-ag gcc software-properties-common\
   bzip2 sqlite3 autoconf bison build-essential\
@@ -12,3 +12,6 @@ sudo apt-get install\
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 sudo apt-get update
 sudo apt-get install rcm
+
+echo 'you should do an apt-get upgrade'
+echo 'to be sure everything is up-to date'
