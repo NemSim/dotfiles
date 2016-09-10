@@ -7,7 +7,7 @@ sudo apt-get install\
   bzip2 sqlite3 autoconf bison build-essential\
   libssl-dev libyaml-dev libreadline6-dev\
   zlib1g-dev libncurses5-dev libffi-dev libgdbm3\
-  libgdbm-dev
+  libgdbm-dev g++-multilib
 
 sudo add-apt-repository ppa:martin-frost/thoughtbot-rcm
 sudo apt-get update

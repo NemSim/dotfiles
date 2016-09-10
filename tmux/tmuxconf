@@ -15,6 +15,9 @@ set-option -g prefix C-a
 unbind-key C-a
 bind-key C-a send-prefix
 
+# clear screen
+bind C-l send-keys 'C-l'
+
 # support emacs cursor movement
 bind-key a send-prefix
 
@@ -154,13 +157,9 @@ set-option -g window-status-current-format '#I:#W:#F'
 ## thyme - pomodoro timer
 # https://github.com/hughbien/thyme
 # bind keys to start/stop pom timer
-bind-key P run "thyme -d"\; display-message "pomodoro!"
+bind-key P run "thyme -d -r"\; display-message "pomodoro!"
 bind-key S run "thyme -s"\; display-message "done with pomodoro"
 
 
 # TODO source a .local file if present
 # source-file ~/.tmux.conf.local
-
-
-# some bits stolen from:
-# https://github.com/square/maximum-awesome

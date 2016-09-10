@@ -3,20 +3,16 @@
 @nemsim
 
 ## setup
+
+view all the stuff you need to do
 ```
 git clone https://github.com/NemSim/dotfiles
 cd dotfiles
-bash bootstrap/full.sh
+bash bootstrap/init.sh
 ```
 
-## vagrant setup
-if you don't want to take any risks even though it backs up your existing dotfiles
+## props
 
-```
-git clone https://github.com/NemSim/dotfiles
-cd dotfiles/vagrant
-vagrant up
-vagrant ssh
-cd dotfiles
-bash bootstrap/full.sh
-```
+some bits borrowed from these places:
+* [tscheffe - dotfiles](https://github.com/tscheffe/dotfiles)
+* [square - maximum-awesome](https://github.com/square/maximum-awesome)
