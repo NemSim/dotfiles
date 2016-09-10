@@ -15,7 +15,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'vimwiki/vimwiki'
 
 " Snippets
 Plugin 'SirVer/ultisnips' " engine
