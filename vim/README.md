@@ -2,11 +2,15 @@
 
 ```
 vundle package manager
+in bundles.vim:
+  Plugin 'foo/bar'
+
 
 leader key:                    ,
 
+
 ,V - reloads vimrc
-,s - switch between light and dark solarized
+,s - switch between light and dark theme
 
 scrooloose/nerdtree
   bring up NERDTree:          ,d

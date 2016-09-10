@@ -9,7 +9,6 @@ else
   echo 'you did this in the wrong order. Vundle.vim wasnt cloned'
 fi
 
-echo ''
 echo 'installing plugins'
 vim -u $HOME/dotfiles/vim/bundles.vim +PluginInstall +qall
 

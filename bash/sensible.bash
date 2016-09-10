@@ -102,5 +102,4 @@ shopt -s cdable_vars
 export dotfiles="$HOME/dotfiles"
 export projects="$HOME/projects"
 export hacking="$HOME/hacking"
-export tools="$HOME/tools"
 

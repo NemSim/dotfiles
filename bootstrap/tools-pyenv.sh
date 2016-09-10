@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source "$HOME/dotfiles/bash/bash_functions"
+
 echo 'bootstrapping pyenv'
 
 # pyenv python manager
