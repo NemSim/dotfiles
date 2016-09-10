@@ -62,7 +62,7 @@ else
   echo 'rbenv not found?'
 fi
 
-# install a newish python
+# install a newish and a new oldish python
 if program_exists pyenv; then
   echo 'installing python 3.5.2'
   pyenv install -s 3.5.2
@@ -72,9 +72,6 @@ if program_exists pyenv; then
 else
   echo 'pyenv not found?'
 fi
-
-# TODO
-# git clone https://github.com/yyuu/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 
 # install pip3 stuff
 echo 'you might want to'

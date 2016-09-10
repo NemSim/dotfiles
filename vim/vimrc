@@ -7,7 +7,7 @@
 " ,V - reloads vimrc
 " ,s - switch between light and dark solarized
 "
-" scrooloose/nerdree
+" scrooloose/nerdtree
 "   bring up NERDTree:          ,d
 "
 " 'kien/ctrlp.vim'
@@ -29,9 +29,12 @@
 "   wrap line in parens: yssb | yss)
 "   select mode wrap in: S"
 "
-" 'scrooloose/nerdcommenter'
-"   ,cc - comment selection
-"   ,cu - uncomment selection
+" 'tpope/vim-commentary'
+"   gcc                - comment out a line
+"   gc(motion)         - comment selection
+"   gc (visual)        - (visual) comment selection
+"   :4,35Commentary    - comment lines 4,35
+"   :g/foo/Commentary  - comment foo
 "
 " 'easymotion/vim-easymotion'
 "   ,,s - single character search
@@ -91,8 +94,8 @@ noremap <C-l> <C-w>l
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" show nerdtree
-nnoremap <leader>d :NERDTreeToggle<CR>
+" toggle nerdtree in all tabs
+nnoremap <leader>d :NERDTreeTabsToggle<CR>
 
 " CtrlP stuff
 nnoremap <leader>t :CtrlP<CR>
