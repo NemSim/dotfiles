@@ -1,6 +1,20 @@
 ```
 http://ethanschoonover.com/solarized
 
+ dark
+ base  1 - optional emphasized content
+ base  0 - body text / default code / primary content
+ base 01 - comments / secondary content
+ base 02 - background highlights
+ base  1 - optional emphasized content
+
+ light
+ base 01 - optional emphasized content
+ base 00 - body text / default code / primary content
+ base  1 - comments / secondary content
+ base  2 - background highlights
+ base  3 - optional emphasized content
+
 base03:    #002b36
 base02:    #073642
 base01:    #586e75
@@ -36,18 +50,4 @@ violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
 blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
 cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
 green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
-
- dark
- base  1 - optional emphasized content
- base  0 - body text / default code / primary content
- base 01 - comments / secondary content
- base 02 - background highlights
- base  1 - optional emphasized content
-
- light
- base 01 - optional emphasized content
- base 00 - body text / default code / primary content
- base  1 - comments / secondary content
- base  2 - background highlights
- base  3 - optional emphasized content
 ```

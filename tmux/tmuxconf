@@ -69,7 +69,15 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
-# smart pane switching with awareness of vim splits
+### TOOLS ###
+
+## thyme - pomodoro timer
+# https://github.com/hughbien/thyme
+# bind keys to start/stop pom timer
+bind-key P run "thyme -d -r"\; display-message "pomodoro!"
+bind-key S run "thyme -s"\; display-message "done with pomodoro"
+
+## smart pane switching with awareness of vim splits
 # See: https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 bind-key -n C-h if-shell "$is_vim" "send-keys C-h"  "select-pane -L"
@@ -89,12 +97,14 @@ set-option -g status-interval 1
 # status-right
 set-option -g status-right-length 70
 # thyme counter and session name
-set-option -g status-right "#(cat ~/.thyme-tmux) #[fg=#268bd2]\[#S\]"
+set-option -g status-right "#(cat ~/.thyme-tmux) \[#S\]"
+# set-option -g status-right "#(cat ~/.thyme-tmux) #[fg=#268bd2]\[#S\]"
 
 # status-left
 # cal / clock
 set-option -g status-left-length 70
-set-option -g status-left "#[fg=#cb4b16]%a #[fg=#839496]%b %d #[fg=#93a1a1]| %H:%M %Z"
+set-option -g status-left "%a %b %d | %H:%M %Z"
+# set-option -g status-left "#[fg=#cb4b16]%a #[fg=#839496]%b %d #[fg=#93a1a1]| %H:%M %Z"
 
 # center window list in status bar
 set-option -g status-justify centre
@@ -148,14 +158,6 @@ set-option -g window-status-current-format '#I:#W:#F'
 # # clock
 # set-window-option -g clock-mode-colour colour64 #green
 
-
-### TOOLS ###
-
-## thyme - pomodoro timer
-# https://github.com/hughbien/thyme
-# bind keys to start/stop pom timer
-bind-key P run "thyme -d -r"\; display-message "pomodoro!"
-bind-key S run "thyme -s"\; display-message "done with pomodoro"
 
 
 # TODO source a .local file if present
