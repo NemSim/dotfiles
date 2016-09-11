@@ -5,7 +5,9 @@
 bootstrap/ubuntu-dependencies.sh
 ```
 
-## link dotfiles
+## link dotfiles with rcm
+requires:
+* rcm
 ```
 bootstrap/dotfiles.sh
 ```

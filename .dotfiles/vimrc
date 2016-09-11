@@ -5,7 +5,7 @@ filetype off
 
 """" (>'.')> vundle stuff BEGIN <('.'<) """
 " http://www.gmarik.info/blog/2011/chicken-or-egg-dilemma/
-source $HOME/dotfiles/vim/bundles.vim
+source $HOME/.bundles.vim
 " to install:
 " $ vim -u bundles.vim +PluginInstall +qall
 """ (>'.')> vundle stuff END <('.'<) """

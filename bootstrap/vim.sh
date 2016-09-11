@@ -10,6 +10,6 @@ else
 fi
 
 echo 'installing plugins'
-vim -u $HOME/dotfiles/vim/bundles.vim +PluginInstall +qall
+vim -u $HOME/.bundles.vim +PluginInstall +qall
 
 echo 'finished'
