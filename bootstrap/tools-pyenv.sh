@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source "$HOME/dotfiles/bash/bash_functions"
+source "$HOME/.bashrc"
 
 echo 'bootstrapping pyenv'
 
