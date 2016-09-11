@@ -19,9 +19,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
 # sensible.bash
-if [ -f ~/.sensible.bash ]; then
-  ~/.sensible.bash
-fi
+source $HOME/.sensible.bash
 
 # aliases
 if [ -f ~/.bash_aliases ]; then

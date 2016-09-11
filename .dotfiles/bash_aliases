@@ -3,6 +3,25 @@
 # navigation
 alias up='cd ..'
 
+# dotfiles
+function dotfiles {
+  echo '# to sync dotfiles'
+  echo '$ rcup -v -d ~/dotfiles/.dotfiles'
+  echo '   aliased to'
+  echo '$ syncdotfiles'
+  echo ''
+  echo '# to add a file'
+  echo '$ mkrc -v -d ~/dotfiles/.dotfiles FILE'
+  echo '   aliased to'
+  echo '$ adddotfiles FILE'
+  echo ''
+  echo '# to wipe all dotfiles'
+  echo '$ rcdn -v -d ~/dotfiles/.dotfiles'
+}
+alias syncdotfiles='rcup -v -d ~/dotfiles/.dotfiles'
+alias adddotfiles='mkrc -v -d ~/dotfiles/.dotfiles'
+alias listdotfiles='lsrc -d ~/dotfiles/.dotfiles'
+
 # vagrant
 alias sshvl='ssh vagrant@127.0.0.1 -p 2222'
 
