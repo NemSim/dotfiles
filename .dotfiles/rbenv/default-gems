@@ -1,0 +1,7 @@
+# vi: ft=ruby
+
+bundler
+pry
+thyme
+tldrb
+teamocil

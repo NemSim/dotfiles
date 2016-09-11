@@ -1,0 +1,105 @@
+""" FUNCTIONAL """
+
+set nocompatible
+filetype off
+
+"""" (>'.')> vundle stuff BEGIN <('.'<) """
+" http://www.gmarik.info/blog/2011/chicken-or-egg-dilemma/
+source $HOME/dotfiles/vim/bundles.vim
+" to install:
+" $ vim -u bundles.vim +PluginInstall +qall
+""" (>'.')> vundle stuff END <('.'<) """
+
+" just regular filetype stuff
+filetype plugin indent on
+syntax on
+
+" enable mouse
+set mouse=a
+
+" j(j|k) escapes insert mode
+inoremap jj <ESC>
+inoremap jk <ESC>
+
+" comma as leader key
+let mapleader = ','
+
+set autoindent                 " automatically indent when applicable
+set directory-=.               " don't store swapfiles in the current directory
+set encoding=utf-8             " always
+set expandtab                  " expand tabs to spaces
+set ignorecase                 " case-insensitive search
+set incsearch                  " search as you type
+set list                       " show trailing whitespace
+set listchars=tab:▸\ ,trail:▫  " show tabs and trailing spaces
+set number                     " show line numbers
+set ruler                      " show where you are
+set softtabstop=2              " insert mode tab and backspace use 2 spaces
+set tabstop=2                  " actual tabs occupy 2 characters
+set shiftwidth=2               " indent 2 columns of text with reindent operation
+set laststatus=2               " always show statusline
+set wildmode=list              " set wildmenu to list all matches
+
+" make it nice and solarized
+set background=dark
+" colorscheme solarized
+
+" reload vim config shortcut
+noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" toggle nerdtree in all tabs
+nnoremap <leader>d :NERDTreeTabsToggle<CR>
+
+" CtrlP stuff
+nnoremap <leader>t :CtrlP<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
+
+" switch between light and dark backgrounds with ,s
+nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+
+" narcissism
+nnoremap <leader>nem :echo 'Nem rules!'<CR>
+
+" more specific configs
+
+" Use The Silver Searcher for search stuff
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+" use ack which has been configured to use ag
+nnoremap <leader>a :Ack<space>
+
+" snippets
+" Trigger configuration
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" :UltiSnipsEdit splits window.
+let g:UltiSnipsEditSplit="vertical"
+
+" gitgutter
+" background of gitgutter
+" black black white text
+let g:gitgutter_override_sign_column_highlight = 0
+highlight SignColumn ctermbg=black
+highlight SignColumn guibg=black
+highlight GitGutterAdd ctermbg=black
+highlight GitGutterAdd ctermfg=white
+highlight GitGutterChange ctermbg=black
+highlight GitGutterChange ctermfg=white
+highlight GitGutterDelete ctermbg=black
+highlight GitGutterDelete ctermfg=white
+highlight GitGutterChangeDelete ctermbg=black
+let g:gitgutter_sign_added = '++'
+let g:gitgutter_sign_modified = '*~'
+let g:gitgutter_sign_removed = 'xx'
+
+
+" source any local vim-ery
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
+
+" bits stolen from:
+" - https://github.com/square/maximum-awesome
