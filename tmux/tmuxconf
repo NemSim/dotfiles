@@ -15,9 +15,6 @@ set-option -g prefix C-a
 unbind-key C-a
 bind-key C-a send-prefix
 
-# clear screen
-bind C-l send-keys 'C-l'
-
 # support emacs cursor movement
 bind-key a send-prefix
 
