@@ -57,7 +57,6 @@ nnoremap <leader>b :CtrlPBuffer<CR>
 " switch between light and dark backgrounds with ,s
 nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
 
-
 " narcissism
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
 
