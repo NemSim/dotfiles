@@ -47,6 +47,14 @@ set background=dark
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
+" vimwiki bindings
+nnoremap <leader>nt :VimwikiTabnewLink<CR>
+nnoremap <leader>j :VimwikiDiaryNextDay<CR>
+nnoremap <leader>k :VimwikiDiaryPrevDay<CR>
+nnoremap <leader>wc :VimwikiTOC<CR>
+nnoremap <leader>wb :VimwikiTable<CR>
+nnoremap <leader>wah :VimwikiAll2HTML<CR>:filetype detect<CR>
+
 " toggle nerdtree in all tabs
 nnoremap <leader>d :NERDTreeTabsToggle<CR>
 
