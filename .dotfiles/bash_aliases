@@ -35,6 +35,8 @@ alias tp='task projects'
 alias tt='task tags'
 alias ts='task summary'
 alias tc='task calendar'
+alias tcl='task context list'
+alias tcn='task context none'
 ## projects
 alias tpw='task project:work'
 alias tpp='task project:personal'

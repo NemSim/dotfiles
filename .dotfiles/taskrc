@@ -19,6 +19,10 @@ locale=en-US.UTF8
 # Files
 data.location=~/.task
 
+# sync
+taskd.server=tools.nemsim.xyz:53859
+taskd.trust=strict
+
 # use color
 color=on
 
@@ -43,17 +47,17 @@ journal.time=on
 
 # TODO I think I went overboard here
 # date formatting
-dateformat=m/d/y-H:N
-dateformat.holiday=YMD
-dateformat.annotation=m/d/y-H:N
-dateformat.edit=m/d/y-H:N
-dateformat.info=m/d/y-H:N
-dateformat.report=a m/d/y-H:N
+#dateformat=m/d/y-H:N
+#dateformat.holiday=YMD
+#dateformat.annotation=m/d/y-H:N
+#dateformat.edit=m/d/y-H:N
+#dateformat.info=m/d/y-H:N
+#dateformat.report=a m/d/y-H:N
+
+# contexts
+context.work=project:work
+context.personal=project.not:work
+context.hacking=project:hacking
 
 # defaults
-default.command=next limit:15
-default.priority=L
-default.project=personal
-
-taskd.server=tools.nemsim.xyz:53859
-taskd.trust=strict
+default.command=next
