@@ -50,7 +50,23 @@ colorscheme default
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" vimwiki bindings
+" vimwiki
+"" wikis
+"" every save updates:
+""  generated HTML (auto_export: 1)
+""  TOC (auto_toc: 1)
+let g:vimwiki_list = [{'path':'~/.vimwikis/default/', 'path_html':'~/.vimwikis/default/html/',
+      \'auto_export': 1, 'auto_toc': 1}]
+
+" add other wikis like so
+"   {
+"   'path':'~/.vimwikis/whatever/',
+"   'path_html':'~/.vimwikis/whatever/html/',
+"   'auto_export': 1,
+"   'auto_toc': 1
+"   }
+
+"" bindings
 nnoremap <leader>nt :VimwikiTabnewLink<CR>
 nnoremap <leader>j :VimwikiDiaryNextDay<CR>
 nnoremap <leader>k :VimwikiDiaryPrevDay<CR>
