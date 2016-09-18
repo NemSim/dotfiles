@@ -52,6 +52,9 @@ alias tgm='task ghistory.monthly'
 alias tbd='task burndown.daily'
 alias tbm='task burndown.monthly'
 
+# vimwiki
+## back everything up
+alias vimwiki-bu="pushd . && ((cd ~/.vimwikis/default && git add . && gcm 'update' && git push && popd && echo 'updated') || (popd && echo 'idk'))"
 
 # tmux
 #alias tmx='tmux attach -t NAME || tmux new -s NAME'
