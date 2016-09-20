@@ -40,9 +40,12 @@ set shiftwidth=2               " indent 2 columns of text with reindent operatio
 set laststatus=2               " always show statusline
 set wildmode=list              " set wildmenu to list all matches
 
-" make it nice and solarized
+" dark
 set background=dark
+
+" make it nice and solarized
 " colorscheme solarized
+colorscheme default
 
 " reload vim config shortcut
 noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
