@@ -55,8 +55,8 @@ noremap <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo '
 "" every save updates:
 ""  generated HTML (auto_export: 1)
 ""  TOC (auto_toc: 1)
-let g:vimwiki_list = [{'path':'~/.vimwikis/default/', 'path_html':'~/.vimwikis/default/html/',
-      \'auto_export': 1, 'auto_toc': 1}]
+let g:vimwiki_list = [{'path':'/home/nemanja/.vimwikis/default/', 'path_html':'/home/nemanja/.vimwikis/default/html/',
+      \'auto_export': 1, 'auto_toc': 1, 'auto_tags': 1}]
 
 " add other wikis like so
 "   {
@@ -67,12 +67,13 @@ let g:vimwiki_list = [{'path':'~/.vimwikis/default/', 'path_html':'~/.vimwikis/d
 "   }
 
 "" bindings
+" vimwiki
 nnoremap <leader>nt :VimwikiTabnewLink<CR>
 nnoremap <leader>j :VimwikiDiaryNextDay<CR>
 nnoremap <leader>k :VimwikiDiaryPrevDay<CR>
 nnoremap <leader>wc :VimwikiTOC<CR>
 nnoremap <leader>wb :VimwikiTable<CR>
-nnoremap <leader>wah :VimwikiAll2HTML<CR>:filetype detect<CR>
+nnoremap <leader>wah :VimwikiAll2HTML<CR>
 
 " toggle nerdtree in all tabs
 nnoremap <leader>d :NERDTreeTabsToggle<CR>
@@ -81,8 +82,11 @@ nnoremap <leader>d :NERDTreeTabsToggle<CR>
 nnoremap <leader>t :CtrlP<CR>
 nnoremap <leader>b :CtrlPBuffer<CR>
 
-" switch between light and dark backgrounds with ,s
-nnoremap <leader>s :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+" GitGutter line highlights
+nnoremap <leader>gl :GitGutterLineHighlightsToggle<CR>
+
+" tabular binding in visual mode
+vnoremap <leader>t :Tabularize /
 
 " narcissism
 nnoremap <leader>nem :echo 'Nem rules!'<CR>
@@ -107,20 +111,22 @@ let g:UltiSnipsEditSplit="vertical"
 " gitgutter
 " background of gitgutter
 " black black white text
-let g:gitgutter_override_sign_column_highlight = 0
-highlight SignColumn ctermbg=black
-highlight SignColumn guibg=black
-highlight GitGutterAdd ctermbg=black
-highlight GitGutterAdd ctermfg=white
-highlight GitGutterChange ctermbg=black
-highlight GitGutterChange ctermfg=white
-highlight GitGutterDelete ctermbg=black
-highlight GitGutterDelete ctermfg=white
-highlight GitGutterChangeDelete ctermbg=black
+" let g:gitgutter_override_sign_column_highlight = 0
+" highlight SignColumn ctermbg=black
+" highlight SignColumn guibg=black
+" highlight GitGutterAdd ctermbg=black
+" highlight GitGutterAdd ctermfg=white
+" highlight GitGutterChange ctermbg=black
+" highlight GitGutterChange ctermfg=white
+" highlight GitGutterDelete ctermbg=black
+" highlight GitGutterDelete ctermfg=white
+" highlight GitGutterChangeDelete ctermbg=black
+
 let g:gitgutter_sign_added = '++'
 let g:gitgutter_sign_modified = '*~'
 let g:gitgutter_sign_removed = 'xx'
-
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = 'ww'
 
 " source any local vim-ery
 if filereadable(expand("~/.vimrc.local"))
