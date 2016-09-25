@@ -20,8 +20,8 @@ locale=en-US.UTF8
 data.location=~/.task
 
 # sync
-taskd.server=tools.nemsim.xyz:53859
-taskd.trust=strict
+# taskd.server=tools.nemsim.xyz:53859
+# taskd.trust=strict
 
 # use color
 color=on
@@ -32,6 +32,9 @@ include /usr/local/share/doc/task/rc/solarized-dark-256.theme
 
 # nag
 nag=There's better things to be doing
+
+# defaults
+default.command=simple
 
 #calendar.details=''
 # holidays
@@ -45,6 +48,27 @@ weekstart=monday
 # log start and stop time on tasks
 journal.time=on
 
+# urgency tweaks
+## amount of annotations is not relevant
+urgency.annotations.coefficient=0 # def 1.0
+## age of task is only a little relevent
+urgency.age.coefficient=0.5 # def 2.0
+## age of task is only a little relevent
+urgency.age.coefficient=0.5 # def 2.0
+
+# contexts
+context.work=project:work
+context.personal=project.not:work
+context.hacking=project:hacking
+
+# simple report
+report.simple.description=Simple version of next report, doesnt show blocked tasks
+report.simple.columns=id,priority,project,tags,due.relative,description.truncated_count,urgency
+report.simple.labels=ID,Pri,Proj,Tags,Due,Desc,Urg
+report.simple.sort=urgency-
+report.simple.filter=status:pending -BLOCKED limit:page
+
+
 # TODO I think I went overboard here
 # date formatting
 #dateformat=m/d/y-H:N
@@ -53,11 +77,3 @@ journal.time=on
 #dateformat.edit=m/d/y-H:N
 #dateformat.info=m/d/y-H:N
 #dateformat.report=a m/d/y-H:N
-
-# contexts
-context.work=project:work
-context.personal=project.not:work
-context.hacking=project:hacking
-
-# defaults
-default.command=next
