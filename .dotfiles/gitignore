@@ -13,3 +13,6 @@
 
 # log files
 *.log
+
+# default compiled output
+a.out
