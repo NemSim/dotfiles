@@ -96,6 +96,11 @@ nnoremap <leader>nem :echo 'Nem rules!'<CR>
 " Use The Silver Searcher for search stuff
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
+" disable airline separators
+" let g:airline_left_sep=''
+" let g:airline_right_sep=''
+let g:airline_powerline_fonts=1
+
 " use ack which has been configured to use ag
 nnoremap <leader>a :Ack<space>
 
