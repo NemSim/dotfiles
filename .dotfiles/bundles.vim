@@ -20,6 +20,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/DrawIt'
 
 " Snippets
 Plugin 'SirVer/ultisnips' " engine
