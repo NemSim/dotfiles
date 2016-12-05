@@ -68,7 +68,9 @@ let g:vimwiki_list = [{'path':'/home/nemanja/.vimwikis/default/', 'path_html':'/
 
 "" bindings
 " vimwiki
-nnoremap <leader>nt :VimwikiTabnewLink<CR>
+nnoremap <leader>wlt :VimwikiTabnewLink<CR>
+nnoremap <leader>wls :VimwikiVSplitLink<CR>
+nnoremap <leader>wlh :VimwikiSplitLink<CR>
 nnoremap <leader>j :VimwikiDiaryNextDay<CR>
 nnoremap <leader>k :VimwikiDiaryPrevDay<CR>
 nnoremap <leader>wc :VimwikiTOC<CR>

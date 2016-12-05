@@ -1,5 +1,6 @@
 #!/bin/bash
 
+alias keybase="keybase --standalone"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
