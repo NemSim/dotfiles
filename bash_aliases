@@ -1,0 +1,130 @@
+#!/bin/bash
+
+# navigation
+alias up='cd ..'
+
+# dotfiles
+function dotfiles {
+  echo '# to sync dotfiles'
+  echo '$ rcup -v -d ~/dotfiles/.dotfiles'
+  echo '   aliased to'
+  echo '$ syncdotfiles'
+  echo ''
+  echo '# to add a file'
+  echo '$ mkrc -v -d ~/dotfiles/.dotfiles FILE'
+  echo '   aliased to'
+  echo '$ adddotfiles FILE'
+  echo ''
+  echo '# to wipe all dotfiles'
+  echo '$ rcdn -v -d ~/dotfiles/.dotfiles'
+}
+alias syncdotfiles='rcup -v -d ~/dotfiles/.dotfiles'
+alias adddotfiles='mkrc -v -d ~/dotfiles/.dotfiles'
+alias listdotfiles='lsrc -d ~/dotfiles/.dotfiles'
+
+# ruby
+alias be='bundle exec'
+alias ber='bundle exec rake'
+
+# vagrant
+alias sshvl='ssh vagrant@127.0.0.1 -p 2222'
+
+# yaourt pacman front end
+alias pkgupdate='yaourt -Syu --aur'
+alias pkgupdatedev='yaourt -Syu --devel --aur'
+
+# irc
+alias ircgo='TERM=screen-256color irssi -n bananastandman'
+
+# taskwarrior
+alias t='task'
+## general
+alias ta='task add'
+alias tl='task list'
+alias tlg='task long'
+alias tp='task projects'
+alias tt='task tags'
+alias ts='task summary'
+alias tc='task calendar'
+alias tcl='task context list'
+alias tcn='task context none'
+## projects
+alias tpw='task project:work'
+alias tpnw='task project.not:work'
+alias tpp='task project:personal'
+alias tph='task project:hacking'
+alias ctpw='clear && task project:work'
+alias ctpp='clear && task project:personal'
+alias ctph='clear && task project:hacking'
+## reports
+alias tl='task list'
+alias tn='task next'
+alias tnl='task next limit:10'
+alias tm='task minimal'
+alias tml='task minimal limit:10'
+alias tts='task timesheet'
+alias thm='task history.monthly'
+alias tgm='task ghistory.monthly'
+alias tbd='task burndown.daily'
+alias tbm='task burndown.monthly'
+
+# vimwiki
+## back everything up
+alias vimwiki-bu="pushd . && ((cd ~/.vimwikis && git add . && gcm 'update' && git push && popd && echo 'updated') || (popd && echo 'idk'))"
+
+# tmux
+#alias tmx='tmux attach -t NAME || tmux new -s NAME'
+alias tmxgo='tmux has-session && tmux attach || exec tmux'
+alias tmxls='tmux ls'
+alias tmxat='tmux attach'
+alias tmxnew='tmux new-session -s'
+alias tmxcon='tmux attach -t'
+
+# colors
+# alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# show hidden files
+alias l.='ls -d .* --color=auto'
+
+# git
+#  update all repos in dir
+alias updategitrepos='find . -maxdepth 1 -type d -exec sh -c "(cd {} && git pull)" ";"'
+#  short rev hash
+alias gver='git rev-parse --short HEAD'
+#  status
+alias gst='git status'
+#  logs
+alias gl='git log --topo-order --pretty=format:"%Cred%h%Creset >> %Cgreen%ar%Creset%n -%C(yellow)%d%Creset %s %Cblue<%an>%Creset"'
+alias glo='git log --topo-order --pretty=format:"%Cred%h%Creset %C(yellow)%d%Creset \"%s\" %Cgreen%ar%Creset %Cblue<%an>%Creset"'
+alias glg='git log --topo-order --all --graph --pretty=format:"%Cred%h%Creset >> %ar%n -%C(yellow)%d%Creset %s <%an>"'
+
+#  commit
+alias gaam='git commit -a --amend --no-edit'
+alias gcm='git commit --message'
+alias gcam='git commit -a --message'
+#  branch
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias gba='git branch -a'
+alias gbr='git branch'
+alias glast='git log -n 1 -p'
+
+# Pomodoro timer daemon with thyme
+alias startpom="thyme -r -d"
+
+# Ambient engine noise
+# requires package sox
+# http://www.reddit.com/r/commandline/comments/29le5u/generate_your_own_ambient_tng_enterprise_engine/
+# alias warp="play -c 2 -n -c1 synth whitenoise lowpass -1 120 lowpass -1 120 lowpass -1 120 gain +10"
+
+# Matrix
+alias matrix='cmatrix -abs' # closes with a key
+
+# calendar with todays date
+# alias tcal='cal | grep --before-context 6 --after-context 6 --color -e " $(date +%e) " -e "^$(date +%e)"'
+
+# calendar with this week's date
+# alias tweek='cal | grep --color -e " $(date +%e) " -e "^(date +%e)"'
+
+

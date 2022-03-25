@@ -1,0 +1,44 @@
+# vi: ft=ruby
+# mostly default thymerc from
+# https://github.com/hughbien/thyme
+set :timer, 23*60              # 23 minute pomodoros
+set :timer_break, 7*60         # 7 minute breaks
+set :warning, 5*60             # show warning color in tmux at <5 minutes, 0 to disable
+set :interval, 1               # refresh timer every 1 second
+# FIXME colors dont work here
+set :tmux, true
+set :warning_color, 'red,bold' # warning color for tmux is red/bold
+set :break_color, 'blue'       # break color is blue
+set :tmux_theme, "#[fg=green,bg=default]#[fg=%s]%s#[fg=default,bg=default]"
+
+# FIXME default thymerc has these but they don't work
+## adds `-t --today` option, which opens a text file in vim
+#option :t, :today, 'open today sheet' do
+  #`vim -O ~/.thyme-today.md ~/.thyme-records.md < \`tty\` > \`tty\``
+#end
+
+## adds `-s --seconds num` option, which allows on the fly timer
+#option :s, 'seconds num', 'run with custom seconds' do |num|
+  #set :timer, num.to_i
+  #run
+#end
+
+## execute hook before thyme program starts
+#before(:all) do
+  #`mplayer ~/music/flight-of-the-bumble-bee.mp3 &`
+#end
+
+## execute hook before each pomodoro
+before do
+  `timew start pomodoro`
+end
+
+## execute hook after each pomodoro
+after do
+  `timew stop pomodoro`
+end
+
+## execute hook after thyme program quits
+#after(:all) do
+  #`mplayer ~/music/victory.mp3 &`
+#end
